@@ -47,27 +47,33 @@
             <div class="slides">
                 <!-- Title Slide -->
                 <section>
-                    <h1>Machine learning for climate change</h1>
+                    <h1>Machine Learning for Climate Change Prediction</h1>
                     <h4>Presented by: Asif Ahmed Neloy</h4>
                     <h5>Faculty member, Douglas College, British Columbia Institute of Technology (BCIT)</h5>
                     <h6>Visit: <a href="https://aaneloy.github.io">aaneloy.github.io</a></h6>
                 </section>
 
-                <!-- Objective Slide with Dataset Information -->
+                <!-- Objective Slide -->
                 <section>
-                    <h2>Objectives and dataset</h2>
+                    <h2>Objectives</h2>
+                    <p>We aim to predict future temperature trends in Canada using historical climate data.</p>
+                    <p>Approach:</p>
                     <ul>
-                        <li>Understand how to explore climate data</li>
-                        <li>Apply machine learning models to predict climate trends</li>
-                        <li>Evaluate the performance of models</li>
-                        <li>Dataset: Climate data (Canada) from 1900 to 2020, including temperature, CO2 levels, and emissions</li>
+                        <li>Analyze historical data (temperature, CO2 levels, emissions).</li>
+                        <li>Preprocess the dataset to clean and transform it.</li>
+                        <li>Apply machine learning models for prediction.</li>
                     </ul>
                 </section>
 
-                <!-- Dataset Slide with Sample Data -->
+                <!-- Dataset Description Slide -->
                 <section>
-                    <h2>Dataset information</h2>
-                    <p>Sample of the climate dataset:</p>
+                    <h2>Dataset Description</h2>
+                    <p>The dataset contains Canadian climate data from 1900 to 2020, including:</p>
+                    <ul>
+                        <li>Average yearly temperature (°C)</li>
+                        <li>CO2 levels (ppm)</li>
+                        <li>Greenhouse gas emissions (kilotons)</li>
+                    </ul>
                     <pre><code>
 Year, Temperature (°C), CO2 (ppm), Emissions (kilotons)
 1990, 8.2, 355.0, 540000
@@ -75,22 +81,63 @@ Year, Temperature (°C), CO2 (ppm), Emissions (kilotons)
 2010, 9.7, 389.0, 620000
 2020, 10.2, 412.5, 630000
                     </code></pre>
-                    <p>Data extracted from: <a href="https://climate-change.canada.ca/climate-data">Canadian Climate Data Portal</a></p>
-                    <p>This dataset contains the average yearly temperature, CO2 levels, and greenhouse gas emissions for Canada. We will use this data to explore trends and predict future temperature based on historical patterns.</p>
                 </section>
 
-                <!-- Code Block Example Slide -->
+                <!-- Importing the Dataset -->
                 <section>
-                    <h2>Importing the dataset</h2>
+                    <h2>Importing the Dataset</h2>
+                    <p>We start by importing the dataset and displaying the first few rows:</p>
                     <pre><code>import pandas as pd
 df = pd.read_csv('canada_climate_data.csv')
-df.head()</code></pre>
+df.head()
+                    </code></pre>
+                    <p>Let’s also check the data types:</p>
+                    <pre><code>df.info()</code></pre>
                 </section>
 
-                <!-- Conclusion Slide -->
+                <!-- Data Preprocessing Steps -->
+                <section>
+                    <h2>Preprocessing the Dataset</h2>
+                    <p>We now clean the data:</p>
+                    <ul>
+                        <li>Check for missing values</li>
+                        <li>Handle outliers and inconsistencies</li>
+                        <li>Ensure correct data types for columns</li>
+                    </ul>
+                    <pre><code>df.isnull().sum()  # Check for missing values
+df.describe()  # Check for outliers
+                    </code></pre>
+                    <p>Students can practice here: Try handling the missing values or outliers!</p>
+                </section>
+
+                <!-- Data Analysis with Charts -->
+                <section>
+                    <h2>Data Analysis and Visualization</h2>
+                    <p>Next, we analyze the data. Let's create a few charts:</p>
+                    <ul>
+                        <li>Plot the temperature trend over time:</li>
+                        <pre><code>df.plot(x='Year', y='Temperature', title='Temperature Trend in Canada (1900-2020)')</code></pre>
+                        <li>Create a correlation heatmap to understand relationships between variables:</li>
+                        <pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+sns.heatmap(df.corr(), annot=True)
+plt.show()
+                    </code></pre>
+                    </ul>
+                    <p>Practice: Can you create a bar chart showing emissions over time?</p>
+                </section>
+
+                <!-- Live Code Execution with Binder -->
+                <section>
+                    <h2>Run the code live</h2>
+                    <p>Click the link below to run this notebook live using Binder:</p>
+                    <a href="https://mybinder.org/v2/gh/aaneloy/climate_pred/HEAD" target="_blank">Run this code on Binder</a>
+                </section>
+
+                <!-- Conclusion -->
                 <section>
                     <h2>Conclusion</h2>
-                    <p>Today we explored how machine learning can be applied to climate change prediction using data analysis.</p>
+                    <p>Today, we learned how to import, preprocess, and analyze climate data using Python, and we explored how machine learning models can help predict future trends.</p>
                 </section>
             </div>
         </div>
