@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>Machine Learning for Climate Change Prediction</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css" id="theme">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+
+        <style>
+            /* Custom styling for the title slide */
+            h1 {
+                font-size: 1.5em; /* Reasonably large title */
+                color: navy;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            h4 {
+                font-size: 0.8em; /* Presenter info smaller than title */
+                color: black;
+                margin-bottom: 10px;
+            }
+
+            h5 {
+                font-size: 0.5em;
+                color: black;
+            }
+
+            h6 {
+                font-size: 0.5em; /* Smaller font for the website */
+                color: #333; /* Slightly lighter color for subtle contrast */
+                margin-top: 15px;
+            }
+
+            .reveal .slides section {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Title Slide -->
+                <section>
+                    <h1>Machine learning for climate change</h1>
+                    <h4>Presented by: Asif Ahmed Neloy</h4>
+                    <h5>Faculty member, Douglas College, British Columbia Institute of Technology (BCIT)</h5>
+                    <h6>Visit: <a href="https://aaneloy.github.io">aaneloy.github.io</a></h6>
+                </section>
+
+                <!-- Objective Slide with Dataset Information -->
+                <section>
+                    <h2>Objectives and dataset</h2>
+                    <ul>
+                        <li>Understand how to explore climate data</li>
+                        <li>Apply machine learning models to predict climate trends</li>
+                        <li>Evaluate the performance of models</li>
+                        <li>Dataset: Climate data (Canada) from 1900 to 2020, including temperature, CO2 levels, and emissions</li>
+                    </ul>
+                </section>
+
+                <!-- Dataset Slide with Sample Data -->
+                <section>
+                    <h2>Dataset information</h2>
+                    <p>Sample of the climate dataset:</p>
+                    <pre><code>
+Year, Temperature (°C), CO2 (ppm), Emissions (kilotons)
+1990, 8.2, 355.0, 540000
+2000, 9.1, 369.5, 600000
+2010, 9.7, 389.0, 620000
+2020, 10.2, 412.5, 630000
+                    </code></pre>
+                    <p>Data extracted from: <a href="https://climate-change.canada.ca/climate-data">Canadian Climate Data Portal</a></p>
+                    <p>This dataset contains the average yearly temperature, CO2 levels, and greenhouse gas emissions for Canada. We will use this data to explore trends and predict future temperature based on historical patterns.</p>
+                </section>
+
+                <!-- Code Block Example Slide -->
+                <section>
+                    <h2>Importing the dataset</h2>
+                    <pre><code>import pandas as pd
+df = pd.read_csv('canada_climate_data.csv')
+df.head()</code></pre>
+                </section>
+
+                <!-- Conclusion Slide -->
+                <section>
+                    <h2>Conclusion</h2>
+                    <p>Today we explored how machine learning can be applied to climate change prediction using data analysis.</p>
+                </section>
+            </div>
+        </div>
+
+        <script>
+            Reveal.initialize();
+        </script>
+    </body>
+</html>
